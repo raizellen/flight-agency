@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Pos?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Destinations.ExploreDestinationsController">
+    
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/destination.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label fx:id="welcomeLbl" styleClass="heading"/>
+    <Separator/>
+
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="120.0" text="View All Destinations" onAction="#handleViewAll"/>
+        <Button styleClass="button" prefWidth="120.0" text="View Destinations By Country" onAction="#handleViewCountry"/>
+        <Button styleClass="button" prefWidth="120.0" text="Add Destination" onAction="#handleAddDestination"/>
+        <Button styleClass="button" prefWidth="120.0" text="Remove Destination" onAction="#handleRemoveDestination"/>
+        <Button styleClass="button" prefWidth="120.0" text="Close" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>

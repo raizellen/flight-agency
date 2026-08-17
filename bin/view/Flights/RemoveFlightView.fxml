@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Pos?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="300.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.ModifyFlightsController">
+    
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/flight.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label text="Remove a Flight" styleClass="heading"/>
+    <Separator/>
+    
+    <GridPane alignment="CENTER">
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="label" text="Takeoff: "/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label" text="Landing: "/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="takeoffTf"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="landingTf"/>
+    </GridPane>
+
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="300.0" text="Remove Flight" onAction="#handleRemove" fx:id="removeBtn" disable="true"/>
+        <Button styleClass="button" prefWidth="300.0" text="Close" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>

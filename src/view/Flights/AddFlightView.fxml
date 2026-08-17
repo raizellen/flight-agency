@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Pos?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.ModifyFlightsController">
+    
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/flight.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label text="Add a Flight" styleClass="heading"/>
+    <Separator/>
+    
+    <GridPane alignment="CENTER">
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="label" text="Airline:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label" text="Flight Number: "/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="label" text="Takeoff: "/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="label" text="Landing: "/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="label" text="Cost: "/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="airlineTf"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="flightNoTf"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="takeoffTf"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="landingTf"/>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="costTf"/>
+    </GridPane>
+
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="300.0" text="Add Flight" onAction="#handleAdd" fx:id="addBtn" disable="true"/>
+        <Button styleClass="button" prefWidth="300.0" text="Close" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>

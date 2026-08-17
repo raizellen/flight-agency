@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Destinations.DisplayDestinationsController">
+
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/destination.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label text="Destinations" styleClass="heading"/>
+    <Separator/>
+
+    <TableView fx:id="destinationsTv" items="${controller.destinations.destinations}" prefWidth="250.0" prefHeight="400.0">
+        <placeholder>
+            <Label text="Nothing yet"/>
+        </placeholder>
+        <columns>
+            <TableColumn styleClass="label" prefWidth="300.0" text="Name">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn styleClass="label" prefWidth="300.0" text="Country">
+                <cellValueFactory><PropertyValueFactory property="country"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    
+    <HBox alignment="CENTER">
+        <Button text="Close" styleClass="button" onAction="#handleClose" prefWidth="600.0"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>

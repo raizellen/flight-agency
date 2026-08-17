@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.geometry.Pos?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Trip.DisplayTripController">
+    
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/trip.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label text="Your Trip" styleClass="heading"/>
+    <Separator/>
+
+    <ListView fx:id="tripLv" prefWidth="250.0" prefHeight="400.0">
+        <placeholder>
+            <Label text="Nothing yet"/>
+        </placeholder>
+    </ListView>
+    
+    <HBox alignment="CENTER">
+        <Button styleClass="button" prefWidth="300.0" text="View Individual" onAction="#handleView"/>
+        <Button styleClass="button" prefWidth="300.0" text="Close" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>

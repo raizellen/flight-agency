@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.DisplayFlightsController">
+
+    <ImageView>
+        <fitWidth>600</fitWidth>
+        <preserveRatio>true</preserveRatio>
+        <Image url="/image/flight.png"/>
+    </ImageView>
+    
+    <Separator/>
+    <Label text="Flights" styleClass="heading"/>
+    <Separator/>
+
+    <TableView fx:id="flightsTv" items="${controller.flights.flights}" prefWidth="250.0" prefHeight="400.0">
+        <placeholder>
+            <Label text="Nothing yet"/>
+        </placeholder>
+        <columns>
+            <TableColumn styleClass="label" prefWidth="120.0" text="Airline">
+                <cellValueFactory><PropertyValueFactory property="airline"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn styleClass="label" prefWidth="120.0" text="Flight Number">
+                <cellValueFactory><PropertyValueFactory property="flightNo"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn styleClass="label" prefWidth="120.0" text="Takeoff Country">
+                <cellValueFactory><PropertyValueFactory property="takeoff"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn styleClass="label" prefWidth="120.0" text="Landing Country">
+                <cellValueFactory><PropertyValueFactory property="landing"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn styleClass="label" prefWidth="120.0" text="Cost">
+                <cellValueFactory><PropertyValueFactory property="cost"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    
+    <HBox alignment="CENTER">
+        <Button text="Close" styleClass="button" onAction="#handleClose" prefWidth="600.0"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</VBox>
